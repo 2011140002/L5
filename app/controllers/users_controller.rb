@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   def create
     user = User.new(uid: params[:uid], pass: params[:pass])
     if user.save
-      render root_path
+      render "users/index"
     else
       reder "error"
     end
