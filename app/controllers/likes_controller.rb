@@ -5,7 +5,7 @@ class LikesController < ApplicationController
     user.like_tweets << tweet
     # tweet.like_users << user
     # like = Like.new(user_id: user.id, tweet_id: tweet.id)
-    like.save
+    # like.save
     redirect_to tweets_index_url
   end
   
