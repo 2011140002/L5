@@ -9,6 +9,13 @@ class UsersController < ApplicationController
   end
   
   def create
+    user = User.new(uid: params[:uid], pass: params[:pass])
+    if user.save
+      render "top/main"
+    else
+      reder "error"
+    end
+      
   end
   
   def destroy
