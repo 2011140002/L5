@@ -3,7 +3,7 @@ class TopController < ApplicationController
     if session[:login_uid] != nil 
       render top_main_url
     else
-      render login.html.erb
+      render 'login.html.erb'
     end
   end
   
