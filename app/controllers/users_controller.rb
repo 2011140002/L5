@@ -9,8 +9,8 @@ class UsersController < ApplicationController
   end
   
   def create
-    user = User.new(uid: params[:user][:uid], pass: params[:user][:pass])
-    if user.save
+    @user = User.new(uid: params[:user][:uid], pass: params[:user][:pass])
+    if @user.save
       render "users/index"
     else
       render "error"
