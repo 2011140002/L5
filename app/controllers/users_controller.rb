@@ -12,9 +12,9 @@ class UsersController < ApplicationController
     user = User.new(uid: params[:user][:uid])
     user.pass = BCrypt::Password.create(params[:user][:pass])
     if user.save
-      redirect_to "/"
+      redirect_to root_path
     else
-      render "error"
+      return HttpResponse("ユーザー登録に失敗しました")
     end
       
   end
@@ -22,6 +22,6 @@ class UsersController < ApplicationController
   def destroy
     user = User.find(params[:id])
     user.destroy
-    redirect_to "/"
+    redirect_to root_path
   end
 end
