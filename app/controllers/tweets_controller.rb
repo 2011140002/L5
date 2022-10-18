@@ -1,6 +1,12 @@
 class TweetsController < ApplicationController
   def index
-    @tweets = Tweet.all
+    if session[:login_uid] != nil
+      @tweets = Tweet.all
+      
+    else
+      render 'top/login.html.erb'
+    end
+    
   end
   
   def new

@@ -1,10 +1,11 @@
 <h1>ユーザー一覧</h1>
 
 <% @users.each do |u| %>
-<%= u.uid %>
-<%= link_to '削除', "users/#{u.id}", method: :delete %>
-<br>
+    <%= u.uid %>
+    <%= link_to '削除', "users/#{u.id}", method: :delete %>
+    <br>
 <% end %>
+
 <br>
 <%= link_to 'ユーザー登録', 'users/new' %><br>
 <%= link_to '戻る', 'top/main' %>
