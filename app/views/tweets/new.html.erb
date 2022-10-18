@@ -1,0 +1,9 @@
+<h1>Tweets#new</h1>
+
+<%= form_for @tweet , url: {action: :create} do |f| %>
+<%= f.label :message, 'メッセージ' %>
+<%= f.text_field :message %><br>
+<%= f.submit '登録' ,class: "btn_edit" %>
+
+
+<%end%>
