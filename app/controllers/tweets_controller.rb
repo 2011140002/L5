@@ -8,8 +8,11 @@ class TweetsController < ApplicationController
   end
   
   def create
-    @tweet = Tweet.new(message: params[:tweet][:message])
-    if @tweet.save
+    tweet = Tweet.new(message: params[:tweet][:message])
+    user = User.find(session[:login_uid])
+    user.tweets << tweet
+    tweet.user = user
+    if tweet.save
       redirect_to tweets_index_url
     else
       return HttpResponse("ツイートの投稿に失敗しました")
