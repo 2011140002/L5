@@ -1,7 +1,7 @@
 class TopController < ApplicationController
   def main
     if session[:login_uid] != nil 
-      redirect_to tweet_index_url
+      redirect_to tweets_index_url
     else
       render 'login.html.erb'
     end
@@ -17,7 +17,7 @@ class TopController < ApplicationController
     else
       if BCrypt::Password.new(user.pass) == pass
         session[:login_uid] = uid
-        redirect_to tweet_index_url
+        redirect_to tweets_index_url
       else
         p user
         session[:login_uid] = nil
