@@ -1,11 +1,11 @@
 top/login
 
-<%= form_for user , url: {action: :login} do |f| %>
-<%= f.label :uid, 'ユーザーID' %>
-<%= f.text_field :uid %><br>
-<%= f.label :pass, 'パスワード' %>
-<%= f.text_field :pass %><br>
-<%= f.submit '登録' ,class: "btn_edit" %>
+<%= form_tag '/top/login' , method: :post do %>
+<%= label_tag :uid, 'ユーザーID' %>
+<%= text_field_tag :uid %><br>
+<%= label_tag :pass, 'パスワード' %>
+<%= text_field_tag :pass %><br>
+<%= submit_tag '登録' ,class: "btn_edit" %>
 
 
 <%end%>
