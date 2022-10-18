@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     if user.save
       render "users/index"
     else
-      reder "error"
+      render "error"
     end
       
   end
