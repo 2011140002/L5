@@ -1,9 +1,9 @@
 class TopController < ApplicationController
   def main
     if session[:login_uid] != nil 
-      render top_main
+      render top_main_url
     else
-      render top_login
+      render login.html
     end
   end
   
@@ -17,7 +17,7 @@ class TopController < ApplicationController
     else
       if BCrypt::Password.new(user.pass) == pass
         session[:login_uid] = uid
-        redirect_to root_path
+        redirect_to top_main_url
       else
         p user
         session[:login_uid] = nil
