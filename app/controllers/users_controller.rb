@@ -1,12 +1,7 @@
 class UsersController < ApplicationController
   
   def index
-    if session[:login_uid] != nil
-      @users = User.all
-      
-    else
-      render 'top/login.html.erb'
-    end
+    @users = User.all
   end
   
   def new
