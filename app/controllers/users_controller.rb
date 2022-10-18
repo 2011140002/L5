@@ -9,9 +9,9 @@ class UsersController < ApplicationController
   end
   
   def create
-    pass = BCrypt::Password.create(params[:user][:pass])
-    @user = User.new(uid: params[:user][:uid], pass: pass)
-    if @user.save
+    user = User.new(uid: params[:user][:uid])
+    user.pass = BCrypt::Password.create(params[:user][:pass])
+    if user.save
       redirect_to "/"
     else
       render "error"
