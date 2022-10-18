@@ -2,7 +2,7 @@
 
 <% @tweets.each do |t| %>
 <%= t.message %><br>
-投稿者：<%= t.user.uid %><br>
+投稿者：<%= t.user.uid %>
 
 <% if Like.find_by(tweet_id: t.id) %>
 
@@ -10,6 +10,7 @@
 <% else %>
 <%= link_to 'いいね', likes_create_path(tweet_id: t.id), method: :post %>
 <%end%>
+<br>
 <%= link_to 'ツイート削除', "/tweets/#{t.id}", method: :delete %>
 <br>
 <% end %>
