@@ -3,9 +3,9 @@
 
 <%= form_for @user , url: {action: :create} do |f| %>
 
-<%= t.text_field :uid %><br>
-<%= t.text_field :pass %><br>
-<%= t.submit '投稿' ,class: "btn_edit" %>
+<%= f.text_field :uid %><br>
+<%= f.text_field :pass %><br>
+<%= f.submit '投稿' ,class: "btn_edit" %>
 
 
 <%end%>
