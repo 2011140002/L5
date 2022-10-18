@@ -13,7 +13,7 @@ class TopController < ApplicationController
     user = User.find_by(uid: uid)
     if user == nil
       session[:login_uid] = nil
-      return HttpResponse("ログインに失敗しました")
+      return "ログインに失敗しました"
     else
       if BCrypt::Password.new(user.pass) == pass
         session[:login_uid] = uid
@@ -21,7 +21,7 @@ class TopController < ApplicationController
       else
         p user
         session[:login_uid] = nil
-        return HttpResponse("ログインに失敗しました")
+        return "ログインに失敗しました"
       end
       
     end
