@@ -1,9 +1,9 @@
-<h1>Tweets#index</h1>
+<h1>Tweets一覧</h1>
 
 <% @tweets.each do |t| %>
 <%= t.message %>
 <%= link_to '削除', "/tweets/#{t.id}", method: :delete %>
 <br>
 <% end %>
-
+<br>
 <%= link_to 'ツイートする', 'new' %>
