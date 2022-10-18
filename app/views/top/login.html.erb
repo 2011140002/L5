@@ -1,6 +1,6 @@
 top/login
 
-<%= form_for @user , url: {action: :login} do |f| %>
+<%= form_for user , url: {action: :login} do |f| %>
 <%= f.label :uid, 'ユーザーID' %>
 <%= f.text_field :uid %><br>
 <%= f.label :pass, 'パスワード' %>
