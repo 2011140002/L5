@@ -3,8 +3,8 @@ class LikesController < ApplicationController
     tweet = Tweet.find(params[:tweet_id])
     user = User.find_by(uid: session[:login_uid])
     user.like_tweets << tweet
-    tweet.like_users << user
-    like = Like.new(user_id: user.id, tweet_id: tweet.id)
+    # tweet.like_users << user
+    # like = Like.new(user_id: user.id, tweet_id: tweet.id)
     like.save
     redirect_to tweets_index_url
   end
