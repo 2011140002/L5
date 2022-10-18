@@ -17,7 +17,7 @@ class TopController < ApplicationController
     else
       if BCrypt::Password.new(user.pass) == pass
         session[:login_uid] = uid
-        redirect_to root_path
+        redirect_to tweet_index_url
       else
         p user
         session[:login_uid] = nil
