@@ -5,7 +5,7 @@
 ｜投稿者：<%= t.user.uid %>
 
 <%= link_to 'いいね', likes_create_path(tweet_id: t.id), method: :post %>
-<%= link_to 'いいね削除', like_path(t), method: :delete %>
+<%= link_to 'いいね削除', likes_destroy_path(t), method: :delete %>
 <%= link_to '削除', "/tweets/#{t.id}", method: :delete %>
 <br>
 <% end %>
