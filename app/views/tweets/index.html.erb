@@ -2,8 +2,7 @@
 
 <% @tweets.each do |t| %>
 <%= t.message %>
-｜投稿者：<%= t.user.uid %>
-｜tweet_id：<%= t.id %><br>
+｜投稿者：<%= t.user.uid %><br>
 
 <% if Like.find_by(tweet_id: t.id) %>
 
