@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   
   def create
     if User.find_by(uid: params[:user][:uid])
+      flash[:notice] = 'そのユーザーIDはすでに使われています'
       redirect_to users_new_url
     else
       user = User.new(uid: params[:user][:uid])
