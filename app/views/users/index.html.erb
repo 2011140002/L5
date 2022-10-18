@@ -1,7 +1,9 @@
 <h1>users/index</h1>
 
 <% @users.each do |u| %>
-<%= u.uid %><br>
+<%= u.uid %>
+<%= link_to '削除', 'users/destroy', method: :delete %>
+<br>
 <% end %>
 
 <%= link_to 'ユーザー登録', 'users/new' %>
