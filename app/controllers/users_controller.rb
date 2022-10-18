@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   def create
     if User.find_by(uid: params[:user][:uid])
       render 'new'
+    end
     user = User.new(uid: params[:user][:uid])
     user.pass = BCrypt::Password.create(params[:user][:pass])
     
