@@ -15,15 +15,16 @@ class UsersController < ApplicationController
   
   def create
     if User.find_by(uid: params[:user][:uid])
-      redirect_to 'users/new'
-    end
-    user = User.new(uid: params[:user][:uid])
-    user.pass = BCrypt::Password.create(params[:user][:pass])
-    
-    if user.save
-      redirect_to root_path
+      redirect_to users_new_url
     else
-      redirect_to 'users/new'
+      user = User.new(uid: params[:user][:uid])
+      user.pass = BCrypt::Password.create(params[:user][:pass])
+    
+      if user.save
+        redirect_to root_path
+      else
+        redirect_to users_new_url
+      end
     end
       
   end
