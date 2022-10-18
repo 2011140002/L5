@@ -1,7 +1,7 @@
 class TopController < ApplicationController
   def main
     if session[:login_uid] != nil 
-      render top_main_url
+      redirect_to top_main_url
     else
       render 'login.html.erb'
     end
@@ -29,7 +29,7 @@ class TopController < ApplicationController
   
   def logout
     session[:login_uid] = nil
-    redirect_to root_path
+    redirect_to top_main_url
   end
   
 end
