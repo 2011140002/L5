@@ -1,7 +1,13 @@
 class UsersController < ApplicationController
   
   def index
-    @users = User.all
+    if session[:login_uid] != nil
+      @users = User.all
+      redirect_to root_path
+    else
+      render 'top/login.html.erb'
+    end
+    
   end
   
   def new
