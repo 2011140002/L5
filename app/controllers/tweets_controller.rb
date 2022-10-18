@@ -10,7 +10,7 @@ class TweetsController < ApplicationController
   def create
     @tweet = Tweet.new(message: params[:tweet][:message])
     if @tweet.save
-      redirect_to 'tweets#index'
+      redirect_to tweets_index
     else
       return HttpResponse("ツイートの投稿に失敗しました")
     end
@@ -19,7 +19,7 @@ class TweetsController < ApplicationController
   def destroy
     tweet = Tweet.find(params[:id])
     tweet.destroy
-    redirect_to 'tweets#index'
+    redirect_to tweets_index
   end
   
   
