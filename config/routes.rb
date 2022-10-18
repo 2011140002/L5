@@ -4,11 +4,11 @@ Rails.application.routes.draw do
   root 'users#index'
   get 'users/new'
   post 'users/create'
-  delete 'users/destroy'
+  delete 'users/:id', to: 'users#destroy'
   
   get 'tweets/index'
   get 'tweets/new'
   post 'tweets/create'
-  delete 'tweets/destroy'
+  delete 'tweets/:id', to: 'tweets#destroy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -2,7 +2,7 @@
 
 <% @users.each do |u| %>
 <%= u.uid %>
-<%= link_to '削除', 'users/destroy', method: :delete %>
+<%= link_to '削除', "users/#{u.id}", method: :delete %>
 <br>
 <% end %>
 
