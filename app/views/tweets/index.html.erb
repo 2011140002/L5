@@ -3,7 +3,7 @@
 <% @tweets.each do |t| %>
 <%= t.message %>
 ｜投稿者：<%= t.user.uid %>
-<%= e.message %>
+
 <%= link_to 'いいね', likes_path(tweet_id: e.id), method: :post %>
 <%= link_to 'いいね削除', like_path(e), method: :delete %>
 <%= link_to '削除', "/tweets/#{t.id}", method: :delete %>
