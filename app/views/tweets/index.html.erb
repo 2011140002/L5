@@ -2,7 +2,7 @@
 <p>Find me in app/views/tweets/index.html.erb</p>
 <% @tweets.each do |t| %>
 <%= t.message %>
-<%= link_to '削除', "tweets/#{t.id}", method: :delete %>
+<%= link_to '削除', "/tweets/#{t.id}", method: :delete %>
 <br>
 <% end %>
 
