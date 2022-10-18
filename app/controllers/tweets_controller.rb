@@ -10,7 +10,7 @@ class TweetsController < ApplicationController
   def create
     @tweet = Tweet.new(message: params[:tweet][:message])
     if @tweet.save
-      render 'tweets/index'
+      redirect_to 'index'
     else
       return HttpResponse("ツイートの投稿に失敗しました")
     end
