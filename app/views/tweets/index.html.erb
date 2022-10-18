@@ -1,8 +1,8 @@
 <h1>Tweets一覧</h1>
 
 <% @tweets.each do |t| %>
-<%= t.message %>
-｜投稿者：<%= t.user.uid %><br>
+<%= t.message %><br>
+投稿者：<%= t.user.uid %><br>
 
 <% if Like.find_by(tweet_id: t.id) %>
 
