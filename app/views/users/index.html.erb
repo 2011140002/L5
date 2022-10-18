@@ -1,5 +1,5 @@
 users/index
 
-<%= @users in u %>
+<%= @users.each do |u| %>
 <%= u.uid %><br>
 <% end %>
