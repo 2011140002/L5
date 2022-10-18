@@ -1,13 +1,12 @@
 class UsersController < ApplicationController
   
   def index
-    # if session[:login_uid] != nil
-    #   @users = User.all
+    if session[:login_uid] != nil
+      @users = User.all
       
-    # else
-    #   render 'top/login.html.erb'
-    # end
-    @users = User.all
+    else
+      render 'top/login.html.erb'
+    end
   end
   
   def new
@@ -15,12 +14,15 @@ class UsersController < ApplicationController
   end
   
   def create
+    if User.find_by(uid: params[:user][:uid])
+      render 'new'
     user = User.new(uid: params[:user][:uid])
     user.pass = BCrypt::Password.create(params[:user][:pass])
+    
     if user.save
       redirect_to root_path
     else
-      return HttpResponse("ユーザー登録に失敗しました")
+      render 'new'
     end
       
   end
