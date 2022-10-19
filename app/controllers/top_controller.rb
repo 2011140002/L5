@@ -1,6 +1,6 @@
 class TopController < ApplicationController
   def main
-    if session[:login_uid] != nil 
+    if current_user != nil 
       redirect_to tweets_index_url
     else
       render 'login.html.erb'
