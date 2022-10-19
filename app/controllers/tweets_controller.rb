@@ -1,6 +1,6 @@
 class TweetsController < ApplicationController
   def index
-    if session[:login_uid] != nil
+    if current_user
       @tweets = Tweet.all
       
     else
