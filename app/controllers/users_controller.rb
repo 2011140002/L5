@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       uid = params[:user][:uid]
       password = params[:user][:password]
       password_confirmation = params[:user][:password_confirmation]
-      user = User.new(uid: uid, pasword: password,
+      user = User.new(uid: uid, password: password,
       password_confirmation: password_confirmation)
       if user.save
         redirect_to root_path
