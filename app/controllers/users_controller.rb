@@ -13,13 +13,15 @@ class UsersController < ApplicationController
       flash[:notice] = 'そのユーザーIDはすでに使われています'
       redirect_to users_new_url
     else
-      user = User.new(uid: params[:user][:uid])
-      user.pass = BCrypt::Password.create(params[:user][:pass])
-    
+      uid = params[:user][:uid]
+      password = params[:user][:password]
+      password_confirmation = params[:user][:password_confirmation]
+      user = User.new(uid: uid, pasword: password,
+      password_confirmation: password_confirmation)
       if user.save
         redirect_to root_path
       else
-        redirect_to users_new_url
+        render 'new'
       end
     end
       

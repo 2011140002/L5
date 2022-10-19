@@ -5,6 +5,8 @@ class Tweet < ApplicationRecord
     through: :likes,
     source: :user
     
+    validates :message, presence: true
+    
     def like(user)
       likes.create(user_id: user.id)
     end

@@ -5,8 +5,10 @@
 <%= form_for @user , url: {action: :create} do |f| %>
 <%= f.label :uid, 'ユーザーID' %>
 <%= f.text_field :uid %><br>
-<%= f.label :pass, 'パスワード' %>
-<%= f.text_field :pass %><br>
+<%= f.label :password, 'パスワード' %>
+<%= f.text_field :password %><br>
+<%= f.label :password_confirmation, 'パスワードの確認' %>
+<%= f.text_field :password_confirmation %><br>
 <%= f.submit '登録' ,class: "btn_edit" %>
 
 
