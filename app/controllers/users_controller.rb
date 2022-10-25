@@ -25,7 +25,6 @@ class UsersController < ApplicationController
         redirect_to users_new_url
       end
     end
-      
   end
   
   def destroy
