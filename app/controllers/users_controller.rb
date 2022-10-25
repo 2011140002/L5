@@ -21,7 +21,8 @@ class UsersController < ApplicationController
       if user.save
         redirect_to root_path
       else
-        render 'new'
+        flash[:notice] = 'パスワードが一致していません'
+        redirect_to users_new_url
       end
     end
       
